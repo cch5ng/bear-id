@@ -1,0 +1,176 @@
+/* app/main.scss */
+
+//globals
+//vars
+$primary-color: #f6fafa;
+$nav-color: #196F63;
+$logo-color: #003333;
+$table-color: #96ceb4;
+$input-color: #e5e5e5;
+$error-color: #80175c;
+$list-border-color: #e267b8;
+$list-bgd-color: #fae9f4; //#f6d3ea;
+$btn-color: #c6beb3;
+$heart-color: #80175c;
+
+body {
+	background: $primary-color;
+}
+
+//nav
+
+//bootstrap override
+.navbar navbar-default {
+	border-width: 0;
+	border-radius: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #000;
+}
+
+.navbar {
+	background-color: $nav-color;
+}
+
+.nav-logo {
+	width: 269px;
+	margin-top: -5px;
+}
+
+.navbar-default .navbar-brand {
+	color: $logo-color;
+}
+
+.navbar-brand {
+	font-family: 'Anton', sans-serif;
+	font-size: 2em;
+	font-weight: 500;
+}
+
+//form
+//not enough viz contrast with white text on red bgd
+.btn-danger {
+	color: #000;
+}
+
+.btn-default {
+	background-color: #e5e5e5;
+}
+
+/* Webkit / Chrome Specific CSS to remove tap
+highlight color */
+.btn {
+	-webkit-tap-highlight-color: transparent;
+}
+
+button {
+	margin-right: 8px;
+	background-color: $btn-color;
+}
+
+//overwrite bootstrap
+.btn {
+	border: 1px solid #8e7e68;
+}
+
+input:invalid, .invalid {
+	border: 1px solid #951b6b;
+}
+
+input:valid, .valid {
+	border: 1px solid #048D7C;
+}
+
+input:active,
+input:hover,
+input:focus,
+textarea:active,
+textarea:hover,
+textarea:focus {
+	background-color: $input-color;
+}
+
+//input:focus,
+//textarea:focus {
+//	outline: 0;
+//}
+
+/* This is the style of our error messages */
+.error {
+	width: 100%;
+	min-height: 25px;
+	padding-top: 5px;
+	padding-left: 5px;
+	color: $error-color;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.error.active {
+	padding: 0.3em;
+}
+
+.spacer-md {
+	height: 50px;
+}
+
+.dynamic-header {
+	color: #21586b;
+	text-decoration: underline;
+}
+
+//event list formatting
+
+.event-heading {
+	padding: 5px;
+	border: 1px solid $list-border-color;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+details {
+	margin-bottom: 10px;
+}
+
+//overwrite default
+ul {
+	-webkit-padding-start: 15px;
+}
+
+.event-list {
+	list-style-type: none;
+	background-color: $list-bgd-color;
+	border: 1px solid $list-border-color;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.event-item {
+	padding: 5px 0;
+}
+
+
+//footer
+
+.fa-heart {
+	color: $heart-color;
+}
+
+.hide-fa {
+	display: none;
+}
+
+.footer {
+	padding-top: 30px;
+}
+
+@media (min-width: 768px) {
+	//overwrite bootstrap
+
+	.btn-block {
+		width: 200px;
+		display: inline-block;
+		text-align: center;
+	}
+}
