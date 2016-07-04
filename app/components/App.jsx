@@ -21,7 +21,6 @@ export default class App extends React.Component {
 
 	render() {
 		var bearNodes = this.state.data.map(function(bear) {
-//		var bearNodes = this.props.data.map(function(bear) {
 			var bearName = bear.name;
 			return (
 				<div>
@@ -38,14 +37,6 @@ export default class App extends React.Component {
 						<nav className="navbar navbar-default">
 							<div className="container-fluid">
 								<div className="navbar-header">
-									{/* do not think nec
-									<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-										<span className="sr-only">Toggle navigation</span>
-										<span className="icon-bar"></span>
-										<span className="icon-bar"></span>
-										<span className="icon-bar"></span>
-									</button>
-									*/}
 									<a href='/' className="navbar-brand header-link" activeClassName='active'>Bear ID Helper</a>
 								</div>
 							</div>
@@ -93,6 +84,7 @@ export default class App extends React.Component {
 					      </fieldset>
 					    </details>
 					    */}
+					    {/* TODO sections
 					    <details>
 					      <summary>Courting Bears</summary>
 					      <fieldset>
@@ -102,13 +94,13 @@ export default class App extends React.Component {
 					    <details>
 					      <summary>Fur Color</summary>
 					      <fieldset>
-					        <input type="radio" name="light-fur" id="light-fur" value="light-fur" />Light fur color
+					        <input type="radio" name="light-fur" id="light-fur" value="light-fur" />Light fur color*/}
 					        {/* <input type="radio" name="dark-fur" id="dark-fur" value="dark-fur" />Dark fur color
 					        */}
-					      </fieldset>
-					    </details>
-					        <button type="button" name="filterBtn" className="btn">Filter Bears</button>
-					        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >Clear</button>
+					      {/*</fieldset>
+					    </details>*/}
+					        {/*<button type="button" name="filterBtn" className="btn">Filter Bears</button>*/}
+					        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >All Bears</button>
 					        {/*<button type="button" name="allBtn" className="btn">All</button>*/}
 					</form>
 				</main>
@@ -246,6 +238,63 @@ export default class App extends React.Component {
 
 	}
 
+	/**
+	 *
+	 *
+	 */
+	filter2Cubs = () => {
+		var twoCubsInp = document.getElementById('two-cubs');
+		if (twoCubsInp.checked) {
+			console.log('2 cubs radio button checked');
+			this.setState({
+				data: this.state.backup.filter(function(bear) {
+					return (bear.cubs === 2);
+				})
+			})
+		} else {
+			console.log('2 cubs radio button not checked');
+		}
+
+		//TODO do I need to toggle so that every other radio button gets cleared?
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
+		var threeCubsInp = document.getElementById('three-cubs');
+		threeCubsInp.checked = false;
+
+		var oneCubInp = document.getElementById('one-cub');
+		oneCubInp.checked = false;
+
+	}
+
+
+
+	/**
+	 *
+	 *
+	 */
+	filter1Cub = () => {
+		var oneCubInp = document.getElementById('one-cub');
+		if (oneCubInp.checked) {
+			console.log('1 cub radio button checked');
+			this.setState({
+				data: this.state.backup.filter(function(bear) {
+					return (bear.cubs === 1);
+				})
+			})
+		} else {
+			console.log('1 cub radio button not checked');
+		}
+
+		//TODO do I need to toggle so that every other radio button gets cleared?
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
+		var twoCubsInp = document.getElementById('two-cubs');
+		twoCubsInp.checked = false;
+
+		var threeCubsInp = document.getElementById('three-cubs');
+		threeCubsInp.checked = false;
+
+	}
 
 	/**
 	 *
@@ -258,6 +307,5 @@ export default class App extends React.Component {
 		var form = document.getElementById('bear-form');
 		form.reset();
 	}
-
 
 }
