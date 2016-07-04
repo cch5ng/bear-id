@@ -58,7 +58,7 @@ export default class App extends React.Component {
 					      <fieldset>
 					      	<radiogroup>
 						        <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} label=""/>Missing right ear
-						        <input type="radio" name="ear-floppy" id="ear-floppy" value="" />Floppy right ear
+						        <input type="radio" name="ear-floppy" id="ear-floppy" onClick={this.filterFloppyEar} />Floppy right ear
 						    </radiogroup>
 					      </fieldset>
 					    </details>
@@ -71,9 +71,11 @@ export default class App extends React.Component {
 					    <details>
 					      <summary>Cubs</summary>
 					      <fieldset>
-					        <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" />3 cubs
-					        <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" />2 cubs
-					        <input type="radio" name="one-cub" id="one-cub" value="one-cub" />1 cub
+					      	<radiogroup>
+						        <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" />3 cubs
+						        <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" />2 cubs
+						        <input type="radio" name="one-cub" id="one-cub" value="one-cub" />1 cub
+					        </radiogroup>
 					      </fieldset>
 					    </details>
 					    {/* not sure how to handle at the moment
@@ -145,13 +147,42 @@ export default class App extends React.Component {
 		if (missingEarInp.checked) {
 			console.log('missing ear radio button checked');
 			this.setState({
-				data: this.state.data.filter(function(bear) {
+				data: this.state.backup.filter(function(bear) {
 					return bear.earMissing;
 				})
 			})
 		} else {
 			console.log('missing ear radio button not checked');
 		}
+
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
+		var floppyEarInp = document.getElementById('ear-floppy');
+		floppyEarInp.checked = false;
+	}
+
+	/**
+	 *
+	 *
+	 */
+	filterFloppyEar = () => {
+		var floppyEarInp = document.getElementById('ear-floppy');
+		if (floppyEarInp.checked) {
+			console.log('floppy ear radio button checked');
+			this.setState({
+				data: this.state.backup.filter(function(bear) {
+					return bear.earFloppy;
+				})
+			})
+		} else {
+			console.log('floppy ear radio button not checked');
+		}
+
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
+		var missingEarInp = document.getElementById('ear-missing');
+		missingEarInp.checked = false;
+
 	}
 
 	/**
@@ -166,142 +197,5 @@ export default class App extends React.Component {
 		form.reset();
 	}
 
-	/**
-	 * Adds recipe to local storage and to state
-	 * @param  {[type]} event [description]
-	 * result: update firebase
-	 */
-	// addRecipe = (event) => {
-	// 	if (this.state.nameValid === 'success') {
-	// 		let name = document.getElementById('recipeName').value;
-	// 		event.preventDefault();
 
-	// 		//parsing the ingredients, cleaning up the format so it will display cleanly later on
-	// 		var ingredientsStr = document.getElementById('recipeIngredients').value;
-	// 		var ingredientsAr = ingredientsStr.split(',');
-	// 		//stores final array of ingredients strings, trimmed
-	// 		var ingredientsTrim = [];
-	// 		ingredientsAr.forEach(function(item) {
-	// 			var itemCopy = item.slice(0).trim();
-	// 			ingredientsTrim.push(itemCopy);
-	// 		});
-
-	// 		var stepsStr = document.getElementById('recipeSteps').value;
-	// 		var stepsAr = stepsStr.split('\n');
-
-	// 		//authenticate session before insert
-	// 		let authData = base.getAuth();
-	// 		if (authData) {
-	// 			base.push('recipes', {
-	// 				data:  {name: name,
-	// 					owner: 'cchung',
-	// 					ingredients: ingredientsTrim,
-	// 					steps: stepsAr
-	// 				},
-	// 				then(){
-	// 					//console.log('inserted recipe');
-	// 				}
-	// 			});
-	// 		} else {
-	// 			base.authWithOAuthPopup('google', (error, authData) => {
-	// 				if (error) {
-	// 					console.log("Login Failed!", error);
-	// 				} else {
-	// 					console.log("Authenticated successfully with payload");
-	// 					//update firebase
-	// 				}
-	// 			}, {
-	// 				remember: 'sessionOnly'
-	// 			});
-	// 		}
-	// 	}
-	// };
-
-	/**
-	 * Form validation to ensure that a new name field is unique (key in localStorage)
-	 * @param  {[type]} event [description]
-	 * 
-	 */
-	// validationState = (event) => {
-	// 	this.setState({
-	// 		nameValid: 'success'
-	// 	})
-	// 	let curName = event.target.value;
-	// 	let namesAr = [];
-	// 	let recipesAr = this.state.recipes;
-	// 	let keysAr = [];
-	// 	recipesAr.map(function(recipe) {
-	// 		if (recipe.name === curName) {
-	// 			namesAr.push(recipe.name);
-	// 		}
-	// 	});
-
-	// 	for (let i = 0; i < namesAr.length; i++) {
-	// 		if (curName === namesAr[i]) {
-	// 			this.setState({nameValid: 'error'});
-	// 		} else {
-	// 			this.setState({nameValid: 'success'});
-	// 		}
-	// 	}
-	// };
-
-	/**
-	 * Deletes a recipe from localStorage and state (recipes array). Triggered from Recipe.jsx button.
-	 * @param  {String} id - Recipe id
-	 * @result: update firebase
-	 */
-	// deleteRecipe = (key) => {
-	// 	var onComplete = function(error) {
-	// 		if (error) {
-	// 			console.log('synchronization issue: ' + error);
-	// 		} else {
-	// 		}
-	// 	}
-
-	// 	//authenticate session before insert
-	// 	let authData = recipesRef.getAuth();
-	// 	if (authData) {
-	// 		//update firebase
-	// 		recipesRef.child(key).remove(onComplete);
-	// 	} else {
-	// 		recipesRef.authWithOAuthPopup('google', (error, authData) => {
-	// 			if (error) {
-	// 				console.log("Login Failed!", error);
-	// 			} else {
-	// 				console.log("Authenticated successfully with payload");
-	// 			}
-	// 		}, {
-	// 			remember: 'sessionOnly'
-	// 		});
-	// 	}
-	// };
-
-	/**
-	 * Triggers rebase authWithOAuthPopup() function for google-based login.
-	 * @param  {String} id - Recipe id
-	 * result: log into both Google and firebase
-	 */
-	// googleLogin = () => {
-	// 	base.authWithOAuthPopup('google', (error, authData) => {
-	// 		if (error) {
-	// 			console.log("Login Failed!", error);
-	// 		} else {
-	// 			console.log("Authenticated successfully with payload");
-	// 		}
-	// 	}, {
-	// 		remember: 'sessionOnly'
-	// 	});
-	// }
-
-	/**
-	 * Log out of firebase
-	 * @param  {String} id - Recipe id
-	 * result: log out of firebase but does not log out of Google acct
-	 */
-	// logOut = () => {
-	// 	base.unauth();
-	// 	if (recipesRef.getAuth()) {
-	// 		recipesRef.unauth();
-	// 	}
-	// }
 }
