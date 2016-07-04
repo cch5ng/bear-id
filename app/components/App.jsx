@@ -38,12 +38,14 @@ export default class App extends React.Component {
 						<nav className="navbar navbar-default">
 							<div className="container-fluid">
 								<div className="navbar-header">
+									{/* do not think nec
 									<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 										<span className="sr-only">Toggle navigation</span>
 										<span className="icon-bar"></span>
 										<span className="icon-bar"></span>
 										<span className="icon-bar"></span>
 									</button>
+									*/}
 									<a href='/' className="navbar-brand header-link" activeClassName='active'>Bear ID Helper</a>
 								</div>
 							</div>
@@ -74,9 +76,9 @@ export default class App extends React.Component {
 					      <summary>Cubs</summary>
 					      <fieldset>
 					      	<radiogroup>
-						        <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" />3 cubs
-						        <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" />2 cubs
-						        <input type="radio" name="one-cub" id="one-cub" value="one-cub" />1 cub
+						        <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" onClick={this.filter3Cubs} />3 cubs
+						        <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" onClick={this.filter2Cubs} />2 cubs
+						        <input type="radio" name="one-cub" id="one-cub" value="one-cub" onClick={this.filter1Cub} />1 cub
 					        </radiogroup>
 					      </fieldset>
 					    </details>
@@ -215,6 +217,34 @@ export default class App extends React.Component {
 
 	}
 
+
+	/**
+	 *
+	 *
+	 */
+	filter3Cubs = () => {
+		var threeCubsInp = document.getElementById('three-cubs');
+		if (threeCubsInp.checked) {
+			console.log('3 cubs radio button checked');
+			this.setState({
+				data: this.state.backup.filter(function(bear) {
+					return (bear.cubs === 3);
+				})
+			})
+		} else {
+			console.log('shoulder scar radio button not checked');
+		}
+
+		//TODO do I need to toggle so that every other radio button gets cleared?
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
+		var twoCubsInp = document.getElementById('two-cubs');
+		twoCubsInp.checked = false;
+
+		var oneCubInp = document.getElementById('one-cub');
+		oneCubInp.checked = false;
+
+	}
 
 
 	/**
