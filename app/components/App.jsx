@@ -25,7 +25,7 @@ export default class App extends React.Component {
 			var bearName = bear.name;
 			return (
 				<div>
-					<h3>Bear {bear.number} ({bear.name}) </h3>
+					<h4>Bear {bear.number} ({bear.name}) </h4>
 					<p>{bear.desc}</p>
 				</div>
 			)
@@ -52,6 +52,8 @@ export default class App extends React.Component {
 				</div>
 
 				<main>
+					<p>Hi, this app helps identify the brown bears that are frequently seen on the Katmai NP Brooks Falls cam.</p>
+
 					<form id="bear-form">
 					    <details>
 					      <summary>Ears</summary>
@@ -65,7 +67,7 @@ export default class App extends React.Component {
 					    <details>
 					      <summary>Scars</summary>
 					      <fieldset>
-					        <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" value="shoulder-left-scar" />Upper left shoulder and back
+					        <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" onClick={this.filterShoulderScar} />Upper left shoulder and back
 					      </fieldset>
 					    </details>
 					    <details>
@@ -105,7 +107,7 @@ export default class App extends React.Component {
 					    </details>
 					        <button type="button" name="filterBtn" className="btn">Filter Bears</button>
 					        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >Clear</button>
-					        <button type="button" name="allBtn" className="btn">All</button>
+					        {/*<button type="button" name="allBtn" className="btn">All</button>*/}
 					</form>
 				</main>
 
@@ -115,7 +117,12 @@ export default class App extends React.Component {
 				<footer className="row footer">
 					<div className="col-xs-12 col-sm-12">
 						<p className="text-center">With <i className="fa fa-heart" aria-hidden="true"></i> from<br />
-							Bear 410's kisser!
+							Bear 410's kisser and CChung!
+						</p>
+						<p className="text-center">
+							For much more info on the Katmai bears,<br />
+							see <a href="https://www.nps.gov/katm/learn/photosmultimedia/upload/Bears-of-Brooks-River-2016.pdf" target="_blank">Mike Fitz's 2016 book</a><br />
+							Disclaimer: this is a personal project and not affiliated with Katmai NP nor explore.org. Thank you.
 						</p>
 						<p className="text-center">
 							<a href="http://explore.org/live-cams/player/brown-bear-salmon-cam-brooks-falls" target="_blank">May the Furs be With You!</a><br />
@@ -182,8 +189,33 @@ export default class App extends React.Component {
 		//toggle other to be unselected
 		var missingEarInp = document.getElementById('ear-missing');
 		missingEarInp.checked = false;
+	}
+
+
+	/**
+	 *
+	 *
+	 */
+	filterShoulderScar = () => {
+		var shoulderScarInp = document.getElementById('shoulder-left-scar');
+		if (shoulderScarInp.checked) {
+			console.log('shoulder scar radio button checked');
+			this.setState({
+				data: this.state.backup.filter(function(bear) {
+					return bear.shoulderLeftScar;
+				})
+			})
+		} else {
+			console.log('shoulder scar radio button not checked');
+		}
+
+		//TODO do I need to toggle so that every other radio button gets cleared?
+		//something is weird where both radio buttons can get selected together so when one is selected,
+		//toggle other to be unselected
 
 	}
+
+
 
 	/**
 	 *

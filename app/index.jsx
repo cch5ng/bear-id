@@ -34,7 +34,8 @@ var data = [
 		number: 83,
 		name: 'Wayne Brother',
 		picUrls: [],
-		desc: 'Wayne Brother is the surviving brother of two. He is named after Bruce Wayne for his batman-shaped ears. He is a frequent Brooks Falls fisher with recognizable scars on his upper left shoulder and on his back.'
+		desc: 'Wayne Brother is the surviving brother of two. He is named after Bruce Wayne for his batman-shaped ears. He is a frequent Brooks Falls fisher with recognizable scars on his upper left shoulder and on his back.',
+		shoulderLeftScar: true
 	},
 	{	id: '',
 		number: 128,
