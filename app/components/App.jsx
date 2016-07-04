@@ -2,34 +2,34 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Bear from './Bear.jsx';
-//import BearList from './BearList.jsx';
-//import NavLink from './NavLink.js';
 
 export default class App extends React.Component {
+
 	constructor(props) {
 		super();
-		// let namesAr = [];
-		// this.state = {
-		// 	recipes: [],
-		// 	show: false,
-		// 	nameValid: 'success'
-		// };
+		//hiding all data initially
+		this.state = {
+			filter: true,
+			curFilters: ['all'],
+			data: props.data,
+			backup: props.data
+		};
 	}
 
 	// componentWillMount() {
 	// }
 
 	render() {
-		var bearNodes = this.props.data.map(function(bear) {
+		var bearNodes = this.state.data.map(function(bear) {
+//		var bearNodes = this.props.data.map(function(bear) {
+			var bearName = bear.name;
 			return (
 				<div>
-					<h3>Bear {bear.number} ({bear.name})</h3>
+					<h3>Bear {bear.number} ({bear.name}) </h3>
 					<p>{bear.desc}</p>
 				</div>
 			)
 		})
-
 
 		return (
 			<div className="container-fluid" data={this.props.data}>
@@ -46,18 +46,20 @@ export default class App extends React.Component {
 									</button>
 									<a href='/' className="navbar-brand header-link" activeClassName='active'>Bear ID Helper</a>
 								</div>
-							</div>{/* /.container-fluid */}
+							</div>
 						</nav>
 					</header>
 				</div>
 
 				<main>
-					<form>
+					<form id="bear-form">
 					    <details>
 					      <summary>Ears</summary>
 					      <fieldset>
-					        <input type="radio" name="ear-missing" id="ear-missing" value="missing_ear" />Missing right ear
-					        <input type="radio" name="ear-floppy" id="ear-floppy" value="floppy_ear" />Floppy right ear
+					      	<radiogroup>
+						        <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} label=""/>Missing right ear
+						        <input type="radio" name="ear-floppy" id="ear-floppy" value="" />Floppy right ear
+						    </radiogroup>
 					      </fieldset>
 					    </details>
 					    <details>
@@ -100,7 +102,7 @@ export default class App extends React.Component {
 					      </fieldset>
 					    </details>
 					        <button type="button" name="filterBtn" className="btn">Filter Bears</button>
-					        <button type="button" name="clearBtn" className="btn">Clear</button>
+					        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >Clear</button>
 					        <button type="button" name="allBtn" className="btn">All</button>
 					</form>
 				</main>
@@ -122,6 +124,46 @@ export default class App extends React.Component {
 
 			</div>
 		);
+	}
+
+
+//TODO not working but unsure why
+	/**
+	 * displays bear name if one exists
+	 *
+	 */
+	displayBearName = (name) => {
+		return <span>(name)</span>
+	}
+
+	/**
+	 *
+	 *
+	 */
+	filterMissingEar = () => {
+		var missingEarInp = document.getElementById('ear-missing');
+		if (missingEarInp.checked) {
+			console.log('missing ear radio button checked');
+			this.setState({
+				data: this.state.data.filter(function(bear) {
+					return bear.earMissing;
+				})
+			})
+		} else {
+			console.log('missing ear radio button not checked');
+		}
+	}
+
+	/**
+	 *
+	 */
+	clearFilters = () => {
+		this.setState({
+			data: this.state.backup
+		})
+
+		var form = document.getElementById('bear-form');
+		form.reset();
 	}
 
 	/**
