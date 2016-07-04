@@ -120,7 +120,7 @@ export default class App extends React.Component {
 						</p>
 						<p className="text-center">
 							<a href="http://explore.org/live-cams/player/brown-bear-salmon-cam-brooks-falls" target="_blank">May the Furs be With You!</a><br />
-							<a href="https://github.com/cch5ng/" target="_blank">Source</a>
+							<a href="https://github.com/cch5ng/bear-id" target="_blank">Source</a>
 						</p>
 					</div>
 				</footer>
