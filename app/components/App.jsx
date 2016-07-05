@@ -31,7 +31,7 @@ export default class App extends React.Component {
 		})
 
 		return (
-			<div className="container-fluid" data={this.props.data}>
+			<div data={this.props.data}>
 				<div className="row">
 					<header>
 						<nav className="navbar navbar-default">
@@ -44,102 +44,110 @@ export default class App extends React.Component {
 					</header>
 				</div>
 
-				<main>
-					<p>Hi, this app helps identify the brown bears that are frequently seen on the Katmai NP Brooks Falls cam.</p>
+				<main className="container">
+					<div className="row">
+						<div className="col-sm-12">
+							<p>Hi, this app helps identify the brown bears that are frequently seen on the Katmai NP Brooks Falls cam.</p>
 
-					<form id="bear-form">
-					    <details>
-					      <summary>Ears</summary>
-					      <fieldset>
-					      	<radiogroup>
-								<div className="radio">
-								  <label>
-								    <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} />
-								    Missing right ear
-								  </label>
-								</div>
-								<div className="radio">
-								  <label>
-								    <input type="radio" name="ear-floppy" id="ear-floppy" onClick={this.filterFloppyEar} />
-								    Floppy right ear
-								  </label>
-								</div>
-						    </radiogroup>
-					      </fieldset>
-					    </details>
-					    <details>
-					      <summary>Scars</summary>
-							<div className="radio">
-							  <label>
-							    <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" onClick={this.filterShoulderScar} />
-							    Upper left shoulder and back
-							  </label>
-							</div>
-					    </details>
-					    <details>
-					      <summary>Cubs</summary>
-					      <fieldset>
-					      	<radiogroup>
-								<div className="radio">
-								  <label>
-								    <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" onClick={this.filter3Cubs} />
-								    3 cubs
-								  </label>
-								</div>
-								<div className="radio">
-								  <label>
-								    <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" onClick={this.filter2Cubs} />
-								    2 cubs
-								  </label>
-								</div>
-								<div className="radio">
-								  <label>
-								    <input type="radio" name="one-cub" id="one-cub" value="one-cub" onClick={this.filter1Cub} />
-								    1 cub
-								  </label>
-								</div>
-					        </radiogroup>
-					      </fieldset>
-					    </details>
-					    {/* not sure how to handle at the moment
-					    <details>
-					      <summary>Fishing Spot</summary>
-					      <fieldset>
-					        <input type="radio" name="far-bank-bf" id="far-bank-bf" value="far-bank-bf">Far Banks of Brooks Falls
-					        <input type="radio" name="jacuzzi" id="jacuzzi" value="jacuzzi">Jacuzzi
-					        <input type="radio" name="lip" id="lip" value="lip">The Lip
-					        <input type="radio" name="riffles" id="riffles" value="riffles">The Riffles
-					      </fieldset>
-					    </details>
-					    */}
-					    {/* TODO sections
-					    <details>
-					      <summary>Courting Bears</summary>
-					      <fieldset>
-					        <input type="radio" name="four-ton-747" id="four-ton-747" value="four-ton-747" />747 and 410
-					      </fieldset>
-					    </details>
-					    <details>
-					      <summary>Fur Color</summary>
-					      <fieldset>
-					        <input type="radio" name="light-fur" id="light-fur" value="light-fur" />Light fur color*/}
-					        {/* <input type="radio" name="dark-fur" id="dark-fur" value="dark-fur" />Dark fur color
-					        */}
-					      {/*</fieldset>
-					    </details>*/}
-					        {/*<button type="button" name="filterBtn" className="btn">Filter Bears</button>*/}
-					        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >All Bears</button>
-					        {/*<button type="button" name="allBtn" className="btn">All</button>*/}
-					</form>
+							<form id="bear-form">
+							    <details>
+							      <summary>Ears</summary>
+							      <fieldset>
+							      	<radiogroup>
+										<div className="radio">
+										  <label>
+										    <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} />
+										    Missing right ear
+										  </label>
+										</div>
+										<div className="radio">
+										  <label>
+										    <input type="radio" name="ear-floppy" id="ear-floppy" onClick={this.filterFloppyEar} />
+										    Floppy right ear
+										  </label>
+										</div>
+								    </radiogroup>
+							      </fieldset>
+							    </details>
+							    <details>
+							      <summary>Scars</summary>
+									<div className="radio">
+									  <label>
+									    <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" onClick={this.filterShoulderScar} />
+									    Upper left shoulder and back
+									  </label>
+									</div>
+							    </details>
+							    <details>
+							      <summary>Cubs</summary>
+							      <fieldset>
+							      	<radiogroup>
+										<div className="radio">
+										  <label>
+										    <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" onClick={this.filter3Cubs} />
+										    3 cubs
+										  </label>
+										</div>
+										<div className="radio">
+										  <label>
+										    <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" onClick={this.filter2Cubs} />
+										    2 cubs
+										  </label>
+										</div>
+										<div className="radio">
+										  <label>
+										    <input type="radio" name="one-cub" id="one-cub" value="one-cub" onClick={this.filter1Cub} />
+										    1 cub
+										  </label>
+										</div>
+							        </radiogroup>
+							      </fieldset>
+							    </details>
+							    {/* not sure how to handle at the moment
+							    <details>
+							      <summary>Fishing Spot</summary>
+							      <fieldset>
+							        <input type="radio" name="far-bank-bf" id="far-bank-bf" value="far-bank-bf">Far Banks of Brooks Falls
+							        <input type="radio" name="jacuzzi" id="jacuzzi" value="jacuzzi">Jacuzzi
+							        <input type="radio" name="lip" id="lip" value="lip">The Lip
+							        <input type="radio" name="riffles" id="riffles" value="riffles">The Riffles
+							      </fieldset>
+							    </details>
+							    */}
+							    {/* TODO sections
+							    <details>
+							      <summary>Courting Bears</summary>
+							      <fieldset>
+							        <input type="radio" name="four-ton-747" id="four-ton-747" value="four-ton-747" />747 and 410
+							      </fieldset>
+							    </details>
+							    <details>
+							      <summary>Fur Color</summary>
+							      <fieldset>
+							        <input type="radio" name="light-fur" id="light-fur" value="light-fur" />Light fur color*/}
+							        {/* <input type="radio" name="dark-fur" id="dark-fur" value="dark-fur" />Dark fur color
+							        */}
+							      {/*</fieldset>
+							    </details>*/}
+							        {/*<button type="button" name="filterBtn" className="btn">Filter Bears</button>*/}
+							        <button type="button" name="clearBtn" className="btn" onClick={this.clearFilters} >All Bears</button>
+							        {/*<button type="button" name="allBtn" className="btn">All</button>*/}
+							</form>
+						</div>
+					</div>
+
+					{/* bear data section */}
+					<div className="bears">
+						{bearNodes}
+					</div>
+
 				</main>
 
-				{/* bear data section */}
-				{bearNodes}
-
-				<footer className="row footer">
+				<footer className="fluid-container">
+					<div className="row footer">
 					<div className="col-xs-12 col-sm-12">
 						<p className="text-center">With <i className="fa fa-heart" aria-hidden="true"></i> from<br />
-							Bear 410's kisser and CChung!
+							Bear 410's kisser
 						</p>
 						<p className="text-center">
 							<a href="https://www.nps.gov/katm/learn/photosmultimedia/upload/Bears-of-Brooks-River-2016.pdf" target="_blank">Mike Fitz's 2016 Katmai Bear Book</a><br />
@@ -151,6 +159,7 @@ export default class App extends React.Component {
 						<p className="text-center">
 							Disclaimer: this is a personal project and not affiliated with Katmai NP nor explore.org. Thank you.
 						</p>
+					</div>
 					</div>
 				</footer>
 

@@ -5,12 +5,15 @@
 $primary-color: #f6fafa;
 $nav-color: #196F63;
 $logo-color: #003333;
+$form-background: #9abdbe;
+$bears-background: #a8b9c1;
 $table-color: #96ceb4;
 $input-color: #e5e5e5;
 $error-color: #80175c;
 $list-border-color: #e267b8;
 $list-bgd-color: #fae9f4; //#f6d3ea;
 $btn-color: #c6beb3;
+$footer-background: #dce3e6;
 $heart-color: #80175c;
 
 body {
@@ -49,6 +52,13 @@ body {
 }
 
 //form
+
+#bear-form {
+	background-color: $form-background;
+	padding: 8px;
+	border-radius: 8px;
+}
+
 //not enough viz contrast with white text on red bgd
 .btn-danger {
 	color: #000;
@@ -150,8 +160,20 @@ ul {
 	padding: 5px 0;
 }
 
+.bears {
+	background-color: $bears-background;
+	margin-top: 16px;
+	padding: 8px;
+	border-radius: 8px;
+}
+
 
 //footer
+
+.footer {
+	background-color: $footer-background;
+	margin-top: 24px;
+}
 
 .fa-heart {
 	color: $heart-color;
