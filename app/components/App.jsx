@@ -52,24 +52,52 @@ export default class App extends React.Component {
 					      <summary>Ears</summary>
 					      <fieldset>
 					      	<radiogroup>
-						        <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} label=""/>Missing right ear
-						        <input type="radio" name="ear-floppy" id="ear-floppy" onClick={this.filterFloppyEar} />Floppy right ear
+								<div className="radio">
+								  <label>
+								    <input type="radio" name="ear-missing" id="ear-missing" onClick={this.filterMissingEar} />
+								    Missing right ear
+								  </label>
+								</div>
+								<div className="radio">
+								  <label>
+								    <input type="radio" name="ear-floppy" id="ear-floppy" onClick={this.filterFloppyEar} />
+								    Floppy right ear
+								  </label>
+								</div>
 						    </radiogroup>
 					      </fieldset>
 					    </details>
 					    <details>
 					      <summary>Scars</summary>
-					      <fieldset>
-					        <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" onClick={this.filterShoulderScar} />Upper left shoulder and back
-					      </fieldset>
+							<div className="radio">
+							  <label>
+							    <input type="radio" name="shoulder-left-scar" id="shoulder-left-scar" onClick={this.filterShoulderScar} />
+							    Upper left shoulder and back
+							  </label>
+							</div>
 					    </details>
 					    <details>
 					      <summary>Cubs</summary>
 					      <fieldset>
 					      	<radiogroup>
-						        <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" onClick={this.filter3Cubs} />3 cubs
-						        <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" onClick={this.filter2Cubs} />2 cubs
-						        <input type="radio" name="one-cub" id="one-cub" value="one-cub" onClick={this.filter1Cub} />1 cub
+								<div className="radio">
+								  <label>
+								    <input type="radio" name="three-cubs" id="three-cubs" value="three-cubs" onClick={this.filter3Cubs} />
+								    3 cubs
+								  </label>
+								</div>
+								<div className="radio">
+								  <label>
+								    <input type="radio" name="two-cubs" id="two-cubs" value="two-cubs" onClick={this.filter2Cubs} />
+								    2 cubs
+								  </label>
+								</div>
+								<div className="radio">
+								  <label>
+								    <input type="radio" name="one-cub" id="one-cub" value="one-cub" onClick={this.filter1Cub} />
+								    1 cub
+								  </label>
+								</div>
 					        </radiogroup>
 					      </fieldset>
 					    </details>
@@ -114,13 +142,14 @@ export default class App extends React.Component {
 							Bear 410's kisser and CChung!
 						</p>
 						<p className="text-center">
-							For much more info on the Katmai bears,<br />
-							see <a href="https://www.nps.gov/katm/learn/photosmultimedia/upload/Bears-of-Brooks-River-2016.pdf" target="_blank">Mike Fitz's 2016 book</a><br />
-							Disclaimer: this is a personal project and not affiliated with Katmai NP nor explore.org. Thank you.
+							<a href="https://www.nps.gov/katm/learn/photosmultimedia/upload/Bears-of-Brooks-River-2016.pdf" target="_blank">Mike Fitz's 2016 Katmai Bear Book</a><br />
 						</p>
 						<p className="text-center">
 							<a href="http://explore.org/live-cams/player/brown-bear-salmon-cam-brooks-falls" target="_blank">May the Furs be With You!</a><br />
 							<a href="https://github.com/cch5ng/bear-id" target="_blank">Source</a>
+						</p>
+						<p className="text-center">
+							Disclaimer: this is a personal project and not affiliated with Katmai NP nor explore.org. Thank you.
 						</p>
 					</div>
 				</footer>

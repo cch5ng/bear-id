@@ -42,7 +42,7 @@ var data = [
 		number: 409,
 		name: 'Beadnose',
 		picUrls: [],
-		desc: 'Beadnose has 2 cubs in 2016. This is her fourth known litter. Her cubs have dark colored fur. During 2015, Beadnose frequently fished from the Lip of the falls, delicately balanced at the edge. In 2016 she occasionally still fishes the Lip but later at night.',
+		desc: 'Beadnose has 2 cubs in 2016. This is her fourth known litter. Her cubs have dark colored fur. ',
 		cubs: 2
 	},
 	{	id: '',
@@ -56,7 +56,7 @@ var data = [
 		number: 402,
 		name: null,
 		picUrls: [],
-		desc: "Bear 402 has 2 cubs in 2016. She had 4 cubs from this litter in late 2015 but 2 are remaining now. Her cubs a relatively larger than the other sow's cubs and are light colored.",
+		desc: "Bear 402 has 2 cubs in 2016. She had 4 cubs from this litter in late 2015 but 2 are remaining now. Her cubs a relatively larger than the other sow's cubs and are light colored. Bear 402 still fishes on the Lip of the falls and stashes her cubs on the bank to the side.",
 		cubs: 2
 	},
 	{	id: '',
