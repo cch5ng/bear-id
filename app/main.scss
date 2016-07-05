@@ -49,6 +49,13 @@ body {
 	font-family: 'Anton', sans-serif;
 	font-size: 2em;
 	font-weight: 500;
+	padding-left: 24px;
+}
+
+//bootstrap override
+
+.navbar-default .navbar-brand:hover {
+    color: $logo-color;
 }
 
 //form
@@ -173,6 +180,7 @@ ul {
 .footer {
 	background-color: $footer-background;
 	margin-top: 24px;
+	padding: 8px;
 }
 
 .fa-heart {
