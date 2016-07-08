@@ -33,7 +33,7 @@ export default class App extends React.Component {
 		var bearNodes = this.state.data.map(function(bear) {
 			var bearName = bear.name;
 			return (
-				<div>
+				<div key={bear.id} >
 					<h4>Bear {bear.number} ({bear.name}) </h4>
 					<p>{bear.desc}</p>
 					{bear.picUrls.length ? <img src={bear.picUrls[0]} alt={bear.name} className="img-responsive" /> : null}
