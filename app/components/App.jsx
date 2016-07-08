@@ -20,12 +20,24 @@ export default class App extends React.Component {
 	// }
 
 	render() {
+		var imageNodes = (bear) => {
+			console.log('got to imageNodes');
+			console.log('picUrls: ' + bear.picUrls);
+			bear.picUrls.map(function(url) {
+				return (
+					<img src={url} alt={bear.name} />
+				)
+			})
+		}
+
 		var bearNodes = this.state.data.map(function(bear) {
 			var bearName = bear.name;
 			return (
 				<div>
 					<h4>Bear {bear.number} ({bear.name}) </h4>
 					<p>{bear.desc}</p>
+					{bear.picUrls.length ? <img src={bear.picUrls[0]} alt={bear.name} className="img-responsive" /> : null}
+					{/*{bear.picUrls.length ? imageNodes(bear) : null}*/}
 				</div>
 			)
 		})
@@ -345,5 +357,16 @@ export default class App extends React.Component {
 		var form = document.getElementById('bear-form');
 		form.reset();
 	}
+
+	/**
+	 *
+	 *
+	 */
+	displayImages = (bear) => {
+		return bear.picUrls.forEach(function(picUrl) {
+			<img alt={bear.name} src={picUrl} />
+		})
+	}
+
 
 }
