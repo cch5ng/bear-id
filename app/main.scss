@@ -7,6 +7,7 @@ $nav-color: #196F63;
 $logo-color: #003333;
 $form-background: #9abdbe;
 $bears-background: #a8b9c1;
+$map-background: #e8f0ef;
 $table-color: #96ceb4;
 $input-color: #e5e5e5;
 $error-color: #80175c;
@@ -62,7 +63,7 @@ body {
 
 #bear-form {
 	background-color: $form-background;
-	padding: 8px;
+	padding: 12px;
 	border-radius: 8px;
 }
 
@@ -178,10 +179,16 @@ ul {
 .bears {
 	background-color: $bears-background;
 	margin-top: 16px;
-	padding: 8px;
+	padding: 12px;
 	border-radius: 8px;
 }
 
+.map {
+	background-color: $map-background;
+	margin-top: 16px;
+	padding: 12px;
+	border-radius: 8px;
+}
 
 //footer
 
