@@ -46,6 +46,16 @@ body {
 	color: $logo-color;
 }
 
+.navbar-nav>li>a {
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
 	font-size: 2em;
