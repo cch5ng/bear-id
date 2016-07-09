@@ -16,8 +16,8 @@ export default class App extends React.Component {
 		};
 	}
 
-	// componentWillMount() {
-	// }
+	//componentWillMount() {
+	//}
 
 	render() {
 		var imageNodes = (bear) => {
