@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Bears from './Bears.jsx';
 
 export default class App extends React.Component {
 
@@ -9,7 +10,6 @@ export default class App extends React.Component {
 		super();
 		//hiding all data initially
 		this.state = {
-			filter: true,
 			curFilters: ['all'],
 			data: props.data,
 			backup: props.data
@@ -20,15 +20,7 @@ export default class App extends React.Component {
 	//}
 
 	render() {
-		var imageNodes = (bear) => {
-			console.log('got to imageNodes');
-			console.log('picUrls: ' + bear.picUrls);
-			bear.picUrls.map(function(url) {
-				return (
-					<img src={url} alt={bear.name} />
-				)
-			})
-		}
+		let bears = this.state.data;
 
 		var bearNodes = this.state.data.map(function(bear) {
 			var bearName = bear.name;
@@ -193,10 +185,11 @@ export default class App extends React.Component {
 					{/* bear data section */}
 					<div className="bears" id="bears">
 						<h3>Bears</h3>
-						{bearNodes}
+						{/* {bearNodes} */}
+						<Bears bears={bears} />
 					</div>
 
-					<div className="map" id="map">
+					<div className="map clearfix" id="map">
 						<h3>Guide to Brooks Falls</h3>
 						<p>Tip: hover over a bear to see which bears usually fish at a location. Included are bears seen in late June. More bears may arrive at salmon peak and after spawning time.</p>
 						<map id="imgmap201678224433" name="imgmap201678224433">

@@ -27,7 +27,7 @@ var data = [
 	{	id: 'b003',
 		number: 83,
 		name: 'Wayne Brother',
-		picUrls: ['http://i.imgsafe.org/0323c9b18d.jpg'],
+		picUrls: ['http://i.imgsafe.org/0323c9b18d.jpg', 'http://i.imgsafe.org/7e59c72800.jpg'],
 		desc: 'Wayne Brother is the surviving brother of two. He is named after Bruce Wayne for his batman-shaped ears. He is a frequent Brooks Falls fisher with recognizable scars on his upper left shoulder and on his back.',
 		shoulderLeftScar: true
 	},
@@ -55,14 +55,14 @@ var data = [
 	{	id: 'b007',
 		number: 402,
 		name: null,
-		picUrls: ['http://i.imgsafe.org/032c8b7eef.jpg'],
+		picUrls: ['http://i.imgsafe.org/032c8b7eef.jpg', 'http://i.imgsafe.org/7e56ecf05f.jpg', 'http://i.imgsafe.org/7e57c89e42.jpg'],
 		desc: "Bear 402 has 2 cubs in 2016. She had 4 cubs from this litter in late 2015 but 2 are remaining now. Her cubs a relatively larger than the other sow's cubs and are light colored. Bear 402 still fishes on the Lip of the falls and stashes her cubs on the bank to the side.",
 		cubs: 2
 	},
 	{	id: 'b008',
 		number: 273,
 		name: 'Velma',
-		picUrls: [],
+		picUrls: ['http://i.imgsafe.org/7e5896f80c.jpg'],
 		desc: 'Bear 273 is the mother of Velcro. 273 has a heart-shaped head and both she and Velcro are lighter colored bears. She does not have an official name in the Katmai bear book but was nicknamed as the "ma of Velcro".',
 		cubs: 1
 	}
