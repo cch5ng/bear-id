@@ -89,7 +89,7 @@ export default class App extends React.Component {
 				</div>
 
 				<main className="container">
-					<div className="row">
+					<div className="row rect">
 						<div className="col-sm-12">
 							<p>Hi, this app helps identify the brown bears that are frequently seen on the Katmai NP Brooks Falls cam.</p>
 
@@ -185,19 +185,21 @@ export default class App extends React.Component {
 					{/* bear data section */}
 					<Bears bears={bears} />
 
-					<div className="map" id="map">
-						<h3>Guide to Brooks Falls</h3>
-						<p>Tip: hover over a bear to see which bears usually fish at a location. Included are bears seen in late June. More bears may arrive at salmon peak and after spawning time.</p>
-						<map id="imgmap201678224433" name="imgmap201678224433">
-							<area shape="rect"  className="back-office" alt="Back Office" title="Back Office where Otis often fishes" coords="293,101,473,164" href="#" target="_blank" />
-							<area shape="rect" className="far-banks" alt="Far Banks Right" title="Far Banks where Scare D Bear often fishes" coords="508,103,678,192" href="#" target="_blank" />
-							<area shape="rect" className="middle-front" alt="Middle Front" title="Middle close to falls where 410 often fishes. Backpack or 83 may crowd her and try to steal fish." coords="214,166,472,254" href="#" target="_blank" />
-							<area shape="rect" className="middle-back" alt="Middle Back" title="Middle back where Backpack and 83 often fish" coords="483,199,679,310" href="#" target="_blank" />
-							<area shape="rect" className="below-lip" alt="Below the Lip" title="Below the Lip where 410 may fish" coords="130,256,412,393" href="#" target="_blank" />
-							<area shape="rect" className="jacuzzi" alt="Jacuzzi" title="Jacuzzi where dominant bears (856, 747, Lurch) usually fish. Otis or less dominant bears may fish here when the big guys are gone." coords="420,348,698,488" href="#" target="_blank" />
-							{/* Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) */}
-						</map>
-						<img useMap="#imgmap201678224433" className="img-responsive" src="http://i.imgsafe.org/08e83d2d70.jpg" alt="Brooks Falls Katmai" />
+					<div className="map row" id="map">
+						<div className="col-xs-12">
+							<h3>Guide to Brooks Falls</h3>
+							<p>Tip: hover over a bear to see which bears usually fish at a location. Included are bears seen in late June. More bears may arrive at salmon peak and after spawning time.</p>
+							<map id="imgmap201678224433" name="imgmap201678224433">
+								<area shape="rect"  className="back-office" alt="Back Office" title="Back Office where Otis often fishes" coords="293,101,473,164" href="#" target="_blank" />
+								<area shape="rect" className="far-banks" alt="Far Banks Right" title="Far Banks where Scare D Bear often fishes" coords="508,103,678,192" href="#" target="_blank" />
+								<area shape="rect" className="middle-front" alt="Middle Front" title="Middle close to falls where 410 often fishes. Backpack or 83 may crowd her and try to steal fish." coords="214,166,472,254" href="#" target="_blank" />
+								<area shape="rect" className="middle-back" alt="Middle Back" title="Middle back where Backpack and 83 often fish" coords="483,199,679,310" href="#" target="_blank" />
+								<area shape="rect" className="below-lip" alt="Below the Lip" title="Below the Lip where 410 may fish" coords="130,256,412,393" href="#" target="_blank" />
+								<area shape="rect" className="jacuzzi" alt="Jacuzzi" title="Jacuzzi where dominant bears (856, 747, Lurch) usually fish. Otis or less dominant bears may fish here when the big guys are gone." coords="420,348,698,488" href="#" target="_blank" />
+								{/* Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) */}
+							</map>
+							<img useMap="#imgmap201678224433" className="img-responsive" src="http://i.imgsafe.org/08e83d2d70.jpg" alt="Brooks Falls Katmai" />
+						</div>
 					</div>
 
 				</main>

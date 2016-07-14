@@ -17,8 +17,19 @@ $btn-color: #c6beb3;
 $footer-background: #dce3e6;
 $heart-color: #80175c;
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	background: $primary-color;
+}
+
+//override bootstrap
+.container {
+	margin-top: -15px;
+	padding: 0;
 }
 
 //nav
@@ -69,12 +80,23 @@ body {
     color: $logo-color;
 }
 
+//main
+
+.row {
+	margin: 0;
+}
+
+.col-sm-12,
+.col-xs-12 {
+	padding: 10px 15px 0 15px;
+}
+
 //form
 
 #bear-form {
 	background-color: $form-background;
-	padding: 12px;
-	border-radius: 8px;
+	margin: 0 -15px;
+	padding: 8px 15px;
 }
 
 //not enough viz contrast with white text on red bgd
@@ -187,25 +209,23 @@ ul {
 	padding: 5px 0;
 }
 
+//overwrite bootstrap
+h3 {
+	margin-top: 0;
+}
+
 .bears {
 	background-color: $bears-background;
-	margin-top: 16px;
-	padding: 12px;
-	border-radius: 8px;
 }
 
 .map {
 	background-color: $map-background;
-	margin-top: 16px;
-	padding: 12px;
-	border-radius: 8px;
 }
 
 //footer
 
 .footer {
 	background-color: $footer-background;
-	margin-top: 24px;
 	padding: 8px;
 }
 
@@ -228,6 +248,39 @@ ul {
 		width: 200px;
 		display: inline-block;
 		text-align: center;
+	}
+
+	#bear-form {
+		padding: 12px;
+		margin: 0 -15px;
+		border-radius: 8px;
+	}
+
+	.rect,
+	.bears {
+		margin-top: 16px;
+		padding: 12px;
+		border-radius: 8px;
+	}
+
+	.rect {
+		padding: 0;
+	}
+
+	.container {
+		width: 100%;
+		padding: 0 15px;
+		margin: 0;
+	}
+
+	.map {
+		margin-top: 16px;
+		padding: 12px;
+		border-radius: 8px;
+	}
+
+	.footer {
+		margin-top: 24px;
 	}
 }
 
