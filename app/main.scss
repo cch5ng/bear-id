@@ -230,3 +230,9 @@ ul {
 		text-align: center;
 	}
 }
+
+@media (min-width: 992px) {
+	.desc {
+		height: 170px;
+	}
+}

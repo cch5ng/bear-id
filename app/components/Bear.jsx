@@ -9,6 +9,7 @@ export default class Recipe extends React.Component {
 
 		this.state = {
 			id: this.props.id,
+			number: this.props.number,
 			picUrls: this.props.picUrls,
 			name: this.props.name,
 			desc: this.props.desc
@@ -26,9 +27,9 @@ export default class Recipe extends React.Component {
 		})
 
 		return (
-			<div key={this.state.id} className="col-xs-12 col-sm-6 col-md-4">
+			<div key={this.state.id} className="col-xs-12 col-sm-6 col-md-4 bear">
 				<h4>Bear {this.state.number} ({this.state.name}) </h4>
-				<p>{this.state.desc}</p>
+				<p className="desc">{this.state.desc}</p>
 				{this.state.picUrls.length ? imageNodes : null}
 			</div>
 		)

@@ -183,13 +183,9 @@ export default class App extends React.Component {
 					</div>
 
 					{/* bear data section */}
-					<div className="bears" id="bears">
-						<h3>Bears</h3>
-						{/* {bearNodes} */}
-						<Bears bears={bears} />
-					</div>
+					<Bears bears={bears} />
 
-					<div className="map clearfix" id="map">
+					<div className="map" id="map">
 						<h3>Guide to Brooks Falls</h3>
 						<p>Tip: hover over a bear to see which bears usually fish at a location. Included are bears seen in late June. More bears may arrive at salmon peak and after spawning time.</p>
 						<map id="imgmap201678224433" name="imgmap201678224433">
