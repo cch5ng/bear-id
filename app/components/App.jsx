@@ -198,7 +198,7 @@ export default class App extends React.Component {
 								<area shape="rect" className="jacuzzi" alt="Jacuzzi" title="Jacuzzi where dominant bears (856, 747, Lurch) usually fish. Otis or less dominant bears may fish here when the big guys are gone." coords="420,348,698,488" href="#" target="_blank" />
 								{/* Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) */}
 							</map>
-							<img useMap="#imgmap201678224433" className="img-responsive" src="http://i.imgsafe.org/08e83d2d70.jpg" alt="Brooks Falls Katmai" />
+							<img useMap="#imgmap201678224433" className="img-responsive" src="http://i.imgur.com/xjX0iDg.jpg" alt="Brooks Falls Katmai" />
 						</div>
 					</div>
 
