@@ -2,19 +2,19 @@
 
 //globals
 //vars
-$primary-color: #f6fafa;
-$nav-color: #196F63;
-$logo-color: #003333;
-$form-background: #9abdbe;
-$bears-background: #a8b9c1;
-$map-background: #e8f0ef;
+$primary-color:  white; //#33ffff; // #f6fafa;
+$nav-color: white; // #196F63;
+$logo-color: #CC4F36; //white;
+$form-background: #83f9f1; //#2cddd0; //#9abdbe;
+$bears-background: #c1fcf8; //#a8b9c1;
+$map-background: #83f9f1; //#2cddd0; //#e8f0ef;
 $table-color: #96ceb4;
 $input-color: #e5e5e5;
 $error-color: #80175c;
 $list-border-color: #e267b8;
 $list-bgd-color: #fae9f4; //#f6d3ea;
 $btn-color: #c6beb3;
-$footer-background: #dce3e6;
+$footer-background: #c1fcf8;//#dce3e6;
 $heart-color: #80175c;
 
 * {
@@ -23,7 +23,7 @@ $heart-color: #80175c;
 }
 
 body {
-	background: $primary-color;
+	background-color: $primary-color;
 }
 
 //override bootstrap
@@ -46,6 +46,7 @@ body {
 
 .navbar {
 	background-color: $nav-color;
+	border: 0;
 }
 
 .nav-logo {
@@ -60,12 +61,20 @@ body {
 .navbar-nav>li>a {
 	text-align: center;
 	font-size: 16px;
-	color: #fff;
+	color: #000;
 }
 
-.navbar-default .navbar-nav > li > a {
-	color: #fff;
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:link,
+.navbar-default .navbar-nav > li > a:visited {
+	color: #000;
 }
+
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:hover {
+	color: #666;
+}
+
 
 .navbar-brand {
 	font-family: 'Anton', sans-serif;
@@ -121,7 +130,8 @@ button {
 
 //overwrite bootstrap
 .btn {
-	border: 1px solid #8e7e68;
+	border: 1px solid #aaa;
+	background-color: #fff;
 }
 
 input:invalid, .invalid {

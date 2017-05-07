@@ -42,18 +42,24 @@ const common = {
         // It uses default OS directory by default. If you need something
         // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
         loader: 'babel',
-		query: {
-			cacheDirectory: true,
-			presets: ['react', 'es2015', 'survivejs-kanban']
-		},
+		    query: {
+			     cacheDirectory: true,
+			     presets: ['react', 'es2015', 'survivejs-kanban']
+		    },
         include: PATHS.app
       },
-    // SASS
-		{
-		  test: /\.scss$/,
-		  loaders: ["style", "css", "sass"],
-		  include: PATHS.app
-		}]
+      // SASS
+  		{
+  		  test: /\.scss$/,
+  		  loaders: ["style", "css", "sass"],
+  		  include: PATHS.app
+  		},
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file',
+        include: './build/static/images'
+      }
+      ]
   },
   plugins: [
     new HtmlWebpackPlugin({
