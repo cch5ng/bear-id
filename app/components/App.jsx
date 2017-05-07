@@ -58,6 +58,7 @@ export default class App extends React.Component {
 						          <li><a href="#find">Find a Bear</a></li>
 						          <li><a href="#bears">Bears</a></li>
 						          <li><a href="#map">Brooks Falls</a></li>
+						          <li><a href="https://github.com/cch5ng/bear-id" target="_blank">Github</a></li>
 						      </ul>
 						    </div>{/*} /.navbar-collapse */}
 						  </div>{/*} /.container-fluid */}
