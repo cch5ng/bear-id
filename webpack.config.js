@@ -57,7 +57,7 @@ const common = {
       {
         test: /\.(jpg|png|svg)$/,
         loader: 'file',
-        include: './build/static/images'
+        include: './static/images'
       }
       ]
   },
