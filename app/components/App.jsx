@@ -92,11 +92,8 @@ export default class App extends React.Component {
 				<main className="container">
 					<div className="row rect">
 						<div className="col-sm-12">
-							<p>Hi, this app helps identify the brown bears that are frequently seen on the Katmai NP Brooks Falls cam.</p>
-
-
 							<form id="bear-form">
-								<h3 id="find">Find a Bear</h3>
+								<h3 id="find">Find a Katmai Bear</h3>
 							    <details>
 							      <summary>Ears</summary>
 							      <fieldset>
