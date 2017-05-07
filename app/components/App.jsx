@@ -48,7 +48,7 @@ export default class App extends React.Component {
 						        <span className="icon-bar"></span>
 						        <span className="icon-bar"></span>
 						      </button>
-						      <a href='/' className="navbar-brand header-link" >Bear ID Helper</a>{/* activeClassName='active'*/}
+						      <a href='/' className="navbar-brand header-link" >Name that Bear</a>{/* activeClassName='active'*/}
 						    </div>
 
 						    {/*} Collect the nav links, forms, and other content for toggling */}
@@ -199,7 +199,7 @@ export default class App extends React.Component {
 								<area shape="rect" className="jacuzzi" alt="Jacuzzi" title="Jacuzzi where dominant bears (856, 747, Lurch) usually fish. Otis or less dominant bears may fish here when the big guys are gone." coords="420,348,698,488" href="#" target="_blank" />
 								{/* Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) */}
 							</map>
-							<img useMap="#imgmap201678224433" className="img-responsive" src="http://i.imgur.com/xjX0iDg.jpg" alt="Brooks Falls Katmai" />
+							<img useMap="#imgmap201678224433" className="img-responsive" src="./build/static/images/brooks_falls2016-07-03_16x9.jpg" alt="Brooks Falls Katmai" />
 						</div>
 					</div>
 
