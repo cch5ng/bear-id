@@ -1,2 +1,5 @@
 /node_modules
 .nvmrc
+app/.DS_Store
+app/components/.DS_Store
+build/js/.DS_Store
